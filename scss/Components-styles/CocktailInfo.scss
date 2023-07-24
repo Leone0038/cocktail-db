@@ -1,0 +1,64 @@
+.cocktail-info-container {
+  display: grid;
+  .cocktail-loading {
+    position: fixed;
+    z-index: 1;
+    align-self: center;
+    justify-self: center;
+    top: 200px;
+  }
+  .cocktail-info {
+    padding: 3rem 1rem;
+    align-self: center;
+    justify-self: center;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--SECONDARY-BG-COLOR);
+
+    .back-to-home-btn {
+      border: none;
+      outline: none;
+      width: 180px;
+      height: 40px;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: var(--MAIN-FONT-COLOR);
+      color: aliceblue;
+      font: inherit;
+      text-transform: uppercase;
+    }
+    .img-and-info-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: var(--COCKTAIL-INFO-FLEX-WRAP);
+      justify-content: space-between;
+      gap: 1rem;
+
+      img {
+        width: var(--COCKTAIL-IMG-WIDTH);
+        border-radius: 10px;
+      }
+      .info-container {
+        text-align: start;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+.green-container {
+  background-color: rgb(190, 216, 150);
+  color: var(--MAIN-FONT-COLOR);
+  padding: 0.25rem;
+  border-radius: 5px;
+  font-weight: bold;
+}

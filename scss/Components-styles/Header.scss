@@ -1,0 +1,27 @@
+.header {
+  background-color: var(--SECONDARY-BG-COLOR);
+  padding: 1.25rem 5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: var(--HEADER-JUSTIFY-CONTENT);
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: -2px 2px 12px 2px rgb(72, 72, 72);
+  border-bottom: 2px solid var(--MAIN-FONT-COLOR);
+
+  .links-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a,
+    Link {
+      transition-duration: 0.5s;
+      &:hover {
+        color: var(--MAIN-FONT-COLOR);
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --COCKTAIL-IMG-WIDTH: 350px;
+  --SEARCH-BAR-WIDTH: 40rem;
+  --MAIN-FONT-COLOR: #006400;
+  --GLOBAL-FONT-SIZE: 1.2rem;
+  --PRIMARY-BG-COLOR: aliceblue;
+  --SECONDARY-BG-COLOR: white;
+  --HEADER-JUSTIFY-CONTENT: space-between;
+  --COCKTAIL-INFO-FLEX-WRAP: nowrap;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  .app {
+    padding-bottom: 5rem;
+    background-color: var(--PRIMARY-BG-COLOR);
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--GLOBAL-FONT-SIZE);
+    gap: 6rem;
+    .app-loading {
+      align-self: center;
+      position: fixed;
+      z-index: 1;
+      top: 200px;
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  :root {
+    --SEARCH-BAR-WIDTH: 30rem;
+    --COCKTAIL-INFO-FLEX-WRAP: wrap;
+  }
+}
+@media (max-width: 560px) {
+  :root {
+    --SEARCH-BAR-WIDTH: 25rem;
+    --HEADER-JUSTIFY-CONTENT: center;
+  }
+}
+@media (max-width: 460px) {
+  :root {
+    --SEARCH-BAR-WIDTH: 22rem;
+    --COCKTAIL-IMG-WIDTH: 320px;
+  }
+}
+@media (max-width: 395px) {
+  :root {
+    --SEARCH-BAR-WIDTH: 15rem;
+
+    --COCKTAIL-IMG-WIDTH: 220px;
+    --GLOBAL-FONT-SIZE: 1rem;
+  }
+}

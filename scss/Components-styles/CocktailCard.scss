@@ -1,0 +1,48 @@
+$common-letter-spacing: 3px;
+
+.cocktail-card {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  box-shadow: 2px 2px 5px rgb(97, 97, 97);
+  border-radius: 5px;
+  background-color: var(--SECONDARY-BG-COLOR);
+  width: var(--COCKTAIL-IMG-WIDTH);
+  img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+  .cocktail-info-container {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    padding: 1rem;
+    h5 {
+      letter-spacing: $common-letter-spacing;
+    }
+    .alcoholic {
+      color: rgba(0, 0, 0, 0.404);
+    }
+    .cocktail-details-btn {
+      padding: 0.3rem 0.75rem;
+      background-color: var(--MAIN-FONT-COLOR);
+      color: aliceblue;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 5px;
+      letter-spacing: $common-letter-spacing;
+      transition-duration: 0.5s;
+      &:hover {
+        background-color: rgb(180, 222, 118);
+        color: var(--MAIN-FONT-COLOR);
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 10px 10px 5px grey;
+    transform: scale(1.025);
+  }
+}

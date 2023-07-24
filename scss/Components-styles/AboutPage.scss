@@ -1,0 +1,33 @@
+.about-page-container {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  .about-page-loading {
+    position: fixed;
+    z-index: 1;
+    align-self: center;
+    top: 200px;
+  }
+
+  .about-page {
+    padding: 0 1rem;
+    align-self: center;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    h1 {
+      letter-spacing: 3px;
+    }
+
+    p {
+      letter-spacing: 1px;
+      text-align: justify;
+    }
+    max-width: 40rem;
+  }
+}
