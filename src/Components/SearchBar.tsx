@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { AppContext, AppContextProps } from "../pages/Root";
+import { AppContext } from "../pages/Root";
 import FilterInterface from "./FilterInterface";
 
 export default function SearchBar() {
-  const { searchCocktail } = useContext(AppContext) as AppContextProps;
+  const { searchCocktail } = useContext(AppContext);
   const [toggleFilterInterface, setToggleFilterInterface] = useState(false);
   const [search, setSearch] = useState("");
 

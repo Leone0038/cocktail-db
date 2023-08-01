@@ -1,9 +1,5 @@
-import { Cocktail } from "../pages/Root";
+import { CocktailsContainerProps } from "../types";
 import CocktailCard from "./CocktailCard";
-
-type CocktailsContainerProps = {
-  cocktailsList: Cocktail[];
-};
 
 export default function CocktailsContainer({
   cocktailsList,

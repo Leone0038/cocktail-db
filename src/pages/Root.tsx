@@ -1,43 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import "../css/style.css";
-import Header from "../Components/Header";
-import SearchBar from "../Components/SearchBar";
-import CocktailsContainer from "../Components/CocktailsContainer";
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import CocktailsContainer from "../components/CocktailsContainer";
 import { createContext, useState } from "react";
 import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
+import { AppContextProps, Cocktail } from "../types";
 
-export type AppContextProps = {
-  searchCocktail(text: string): void;
-  changeUrl(e: Partial<SubmitEvent>): void;
-};
-
-export const AppContext = createContext({});
-
-export type Cocktail = {
-  idDrink: number;
-  strDrink: string;
-  strCategory: string;
-  strInstructions: string;
-  strGlass: string;
-  strDrinkThumb: string;
-  strAlcoholic: string;
-  strIngredient1: string;
-  strIngredient2: string;
-  strIngredient3: string;
-  strIngredient4: string;
-  strIngredient5: string;
-  strIngredient6: string;
-  strIngredient7: string;
-  strIngredient8: string;
-  strIngredient9: string;
-  strIngredient10: string;
-  strIngredient11: string;
-  strIngredient12: string;
-  strIngredient13: string;
-  strIngredient14: string;
-  strIngredient15: string;
-};
+export const AppContext = createContext({} as AppContextProps);
 
 export default function Root() {
   const cocktailsList: any = useLoaderData();

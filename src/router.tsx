@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./Components/ErrorPage";
+import ErrorPage from "./components/ErrorPage.tsx";
 import Root from "./pages/Root.tsx";
 import { cocktailLoader } from "./loaders/cocktailLoader.ts";
 import filterLoader from "./loaders/filterLoader.ts";

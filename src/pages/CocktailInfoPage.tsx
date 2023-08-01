@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import { useNavigate, useLoaderData, useNavigation } from "react-router-dom";
-import { Cocktail } from "./Root";
+import { Cocktail } from "../types";
 
 export default function CocktailInfoPage() {
   const {

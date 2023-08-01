@@ -1,105 +1,37 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState, useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Form } from "react-router-dom";
-import { AppContext, AppContextProps } from "../pages/Root";
+import { AppContext } from "../pages/Root";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchAlcoholic,
+  fetchCategories,
+  fetchGlasses,
+  fetchIngredients,
+  getStatus,
+  selectAllAlcoholic,
+  selectAllCategories,
+  selectAllGlasses,
+  selectAllIngredients,
+} from "../features/filter/filterSlice";
+import { FilterInterfaceProps } from "../types";
 
-const categories_url =
-  "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list";
+import Categories from "./Categories";
+import Alcoholic from "./Alcoholic";
+import Glasses from "./Glasses";
+import Ingredients from "./Ingredients";
 
-const alcoholic_url =
-  "https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list";
+import { AnyAction } from "@reduxjs/toolkit";
 
-const glasses_url =
-  "https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list";
+export default function FilterInterface({
+  closeFilterInterface,
+}: FilterInterfaceProps) {
+  const status = useSelector(getStatus);
+  const categories = useSelector(selectAllCategories);
+  const alcoholic = useSelector(selectAllAlcoholic);
+  const glasses = useSelector(selectAllGlasses);
+  const ingredients = useSelector(selectAllIngredients);
 
-const ingredients_url =
-  "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
-
-export default function FilterInterface(props: {
-  closeFilterInterface: () => void;
-}) {
-  const [categories, setCategories] = useState([
-    {
-      strCategory: "",
-    },
-  ]);
-  const [alcoholic, setAlcoholic] = useState([
-    {
-      strAlcoholic: "",
-    },
-  ]);
-  const [glasses, setGlasses] = useState([
-    {
-      strGlass: "",
-    },
-  ]);
-  const [ingredients, setIngredients] = useState([
-    {
-      strIngredient1: "",
-    },
-  ]);
-  const [isLoading, setIsLoading] = useState(false);
-  const { changeUrl } = useContext(AppContext) as AppContextProps;
-  const { closeFilterInterface } = props;
-
-  useEffect(() => {
-    async function getCategories() {
-      try {
-        setIsLoading(true);
-        const resp = await fetch(categories_url);
-        if (resp.ok) {
-          const respToJson = await resp.json();
-          setCategories(respToJson["drinks"]);
-        }
-      } catch (er) {
-        console.log(er);
-      }
-      setIsLoading(false);
-    }
-    async function getAlcoholic() {
-      try {
-        setIsLoading(true);
-        const resp = await fetch(alcoholic_url);
-        if (resp.ok) {
-          const respToJson = await resp.json();
-          setAlcoholic(respToJson["drinks"]);
-        }
-      } catch (er) {
-        console.log(er);
-      }
-      setIsLoading(false);
-    }
-    async function getGlasses() {
-      try {
-        setIsLoading(true);
-        const resp = await fetch(glasses_url);
-        if (resp.ok) {
-          const respToJson = await resp.json();
-          setGlasses(respToJson["drinks"]);
-        }
-      } catch (er) {
-        console.log(er);
-      }
-      setIsLoading(false);
-    }
-    async function getIngredients() {
-      try {
-        setIsLoading(true);
-        const resp = await fetch(ingredients_url);
-        if (resp.ok) {
-          const respToJson = await resp.json();
-          setIngredients(respToJson["drinks"]);
-        }
-      } catch (er) {
-        console.log(er);
-      }
-      setIsLoading(false);
-    }
-    getCategories();
-    getAlcoholic();
-    getGlasses();
-    getIngredients();
-  }, []);
+  const { changeUrl } = useContext(AppContext);
 
   const filteredCategories = categories.filter(
     (c) => !c.strCategory.includes("/")
@@ -112,115 +44,24 @@ export default function FilterInterface(props: {
     (c) => !c.strIngredient1.includes("/")
   );
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAlcoholic() as unknown as AnyAction);
+    dispatch(fetchCategories() as unknown as AnyAction);
+    dispatch(fetchGlasses() as unknown as AnyAction);
+    dispatch(fetchIngredients() as unknown as AnyAction);
+  }, []);
+
   return (
     <Form className="filter-interface" method="post" onSubmit={changeUrl}>
       <button className="close-btn" onClick={closeFilterInterface}>
         <img src="/icons/remove.png" alt="Close" />
       </button>
-      <div className="filter-option-group">
-        <p>Category</p>
-        <div className="options-container">
-          {isLoading ? (
-            <img
-              src="/icons/loading.svg"
-              alt="Loading..."
-              className="filter-loading"
-            />
-          ) : (
-            filteredCategories.map(({ strCategory }, i) => {
-              return (
-                <div key={i} className="label-input-container">
-                  <input
-                    type="radio"
-                    name="filter_option"
-                    id={strCategory}
-                    value={`c=${strCategory}`}
-                  />
-                  <label htmlFor={strCategory}>{strCategory}</label>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
-      <div className="filter-option-group">
-        <p>Alcoholic</p>
-        <div className="options-container">
-          {isLoading ? (
-            <img
-              src="/icons/loading.svg"
-              alt="Loading..."
-              className="filter-loading"
-            />
-          ) : (
-            filteredAlcoholic.map(({ strAlcoholic }, i) => {
-              return (
-                <div key={i} className="label-input-container">
-                  <input
-                    type="radio"
-                    name="filter_option"
-                    id={strAlcoholic}
-                    value={`a=${strAlcoholic}`}
-                  />
-                  <label htmlFor={strAlcoholic}>{strAlcoholic}</label>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
-      <div className="filter-option-group">
-        <p>Glass</p>
-        <div className="options-container">
-          {isLoading ? (
-            <img
-              src="/icons/loading.svg"
-              alt="Loading..."
-              className="filter-loading"
-            />
-          ) : (
-            filteredGlasses.map(({ strGlass }, i) => {
-              return (
-                <div key={i} className="label-input-container">
-                  <input
-                    type="radio"
-                    name="filter_option"
-                    id={strGlass}
-                    value={`g=${strGlass}`}
-                  />
-                  <label htmlFor={strGlass}>{strGlass}</label>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
-      <div className="filter-option-group">
-        <p>Ingredient</p>
-        <div className="options-container">
-          {isLoading ? (
-            <img
-              src="/icons/loading.svg"
-              alt="Loading..."
-              className="filter-loading"
-            />
-          ) : (
-            filteredIngredients.map(({ strIngredient1 }, i) => {
-              return (
-                <div key={i} className="label-input-container">
-                  <input
-                    type="radio"
-                    name="filter_option"
-                    id={strIngredient1}
-                    value={`i=${strIngredient1}`}
-                  />
-                  <label htmlFor={strIngredient1}>{strIngredient1}</label>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
+      <Categories categories={filteredCategories} status={status} />
+      <Alcoholic alcoholic={filteredAlcoholic} status={status} />
+      <Glasses glasses={filteredGlasses} status={status} />
+      <Ingredients ingredients={filteredIngredients} status={status} />
       <button className="filter-submit-btn" type="submit">
         Filter
       </button>
