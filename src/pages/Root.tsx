@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import "../css/style.css";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
@@ -11,7 +9,7 @@ import { AppContextProps, Cocktail } from "../types";
 export const AppContext = createContext({} as AppContextProps);
 
 export default function Root() {
-  const cocktailsList: any = useLoaderData();
+  const cocktailsList = useLoaderData() as Cocktail[];
   const [searchResults, setSearchResults] = useState<Cocktail[]>([]);
   const [isLoadingSearch, setIsLoadingSearch] = useState(false);
 
