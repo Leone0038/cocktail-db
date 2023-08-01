@@ -5,13 +5,7 @@ export default function Alcoholic({ alcoholic, status }: AlcoholicProps) {
     <div className="filter-option-group">
       <p>Category</p>
       <div className="options-container">
-        {status == "loading" ? (
-          <img
-            src="/icons/loading.svg"
-            alt="Loading..."
-            className="filter-loading"
-          />
-        ) : status == "error" ? (
+        {status == "error" ? (
           <h1>An Error Ocurred</h1>
         ) : (
           alcoholic.map(({ strAlcoholic }, i) => {

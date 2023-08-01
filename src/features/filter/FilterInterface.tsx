@@ -1,13 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Form } from "react-router-dom";
 import { AppContext } from "../../pages/Root";
-import { useDispatch, useSelector } from "react-redux";
+
 import {
-  fetchAlcoholic,
-  fetchCategories,
-  fetchGlasses,
-  fetchIngredients,
   getStatus,
   selectAllAlcoholic,
   selectAllCategories,
@@ -16,11 +12,11 @@ import {
 } from "./filterSlice";
 import { FilterInterfaceProps } from "../../types";
 
-import { AnyAction } from "@reduxjs/toolkit";
 import Categories from "../../Components/Categories";
 import Alcoholic from "../../Components/Alcoholic";
 import Glasses from "../../Components/Glasses";
 import Ingredients from "../../Components/Ingredients";
+import { useSelector } from "react-redux";
 
 export default function FilterInterface({
   closeFilterInterface,
@@ -43,15 +39,6 @@ export default function FilterInterface({
   const filteredIngredients = ingredients.filter(
     (c) => !c.strIngredient1.includes("/")
   );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAlcoholic() as unknown as AnyAction);
-    dispatch(fetchCategories() as unknown as AnyAction);
-    dispatch(fetchGlasses() as unknown as AnyAction);
-    dispatch(fetchIngredients() as unknown as AnyAction);
-  }, []);
 
   return (
     <Form className="filter-interface" method="post" onSubmit={changeUrl}>
