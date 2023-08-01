@@ -16,12 +16,11 @@ import {
 } from "./filterSlice";
 import { FilterInterfaceProps } from "../../types";
 
+import { AnyAction } from "@reduxjs/toolkit";
 import Categories from "../../components/Categories";
 import Alcoholic from "../../components/Alcoholic";
 import Glasses from "../../components/Glasses";
 import Ingredients from "../../components/Ingredients";
-
-import { AnyAction } from "@reduxjs/toolkit";
 
 export default function FilterInterface({
   closeFilterInterface,
