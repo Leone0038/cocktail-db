@@ -11,6 +11,8 @@ export default function Categories({ categories, status }: CategoriesProps) {
             alt="Loading..."
             className="filter-loading"
           />
+        ) : status == "error" ? (
+          <h1>An Error Ocurred</h1>
         ) : (
           categories.map(({ strCategory }, i) => {
             return (

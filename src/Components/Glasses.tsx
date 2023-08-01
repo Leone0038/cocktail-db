@@ -11,6 +11,8 @@ export default function Glasses({ glasses, status }: GlassesProps) {
             alt="Loading..."
             className="filter-loading"
           />
+        ) : status == "error" ? (
+          <h1>An Error Ocurred</h1>
         ) : (
           glasses.map(({ strGlass }, i) => {
             return (

@@ -11,6 +11,8 @@ export default function Ingredients({ ingredients, status }: IngredientsProps) {
             alt="Loading..."
             className="filter-loading"
           />
+        ) : status == "error" ? (
+          <h1>An Error Ocurred</h1>
         ) : (
           ingredients.map(({ strIngredient1 }, i) => {
             return (

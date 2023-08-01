@@ -1,7 +1,7 @@
 import "../css/style.css";
-import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
-import CocktailsContainer from "../components/CocktailsContainer";
+import Header from "../Components/Header";
+import SearchBar from "../Components/SearchBar";
+import CocktailsContainer from "../Components/CocktailsContainer";
 import { createContext, useState } from "react";
 import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { AppContextProps, Cocktail } from "../types";

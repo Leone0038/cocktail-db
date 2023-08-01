@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Cocktail } from "../pages/Root";
+import { Cocktail } from "../types";
 
 export default function CocktailCard({
   idDrink,

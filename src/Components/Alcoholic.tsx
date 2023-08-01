@@ -11,6 +11,8 @@ export default function Alcoholic({ alcoholic, status }: AlcoholicProps) {
             alt="Loading..."
             className="filter-loading"
           />
+        ) : status == "error" ? (
+          <h1>An Error Ocurred</h1>
         ) : (
           alcoholic.map(({ strAlcoholic }, i) => {
             return (

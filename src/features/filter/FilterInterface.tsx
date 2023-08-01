@@ -17,10 +17,10 @@ import {
 import { FilterInterfaceProps } from "../../types";
 
 import { AnyAction } from "@reduxjs/toolkit";
-import Categories from "../../components/Categories";
-import Alcoholic from "../../components/Alcoholic";
-import Glasses from "../../components/Glasses";
-import Ingredients from "../../components/Ingredients";
+import Categories from "../../Components/Categories";
+import Alcoholic from "../../Components/Alcoholic";
+import Glasses from "../../Components/Glasses";
+import Ingredients from "../../Components/Ingredients";
 
 export default function FilterInterface({
   closeFilterInterface,
