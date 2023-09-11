@@ -53,7 +53,7 @@ export default function CocktailInfoPage() {
 
   const navigate = useNavigate();
   if (navigation.state == 'idle') {
-    scroll({behavior: 'instant', top: 0})
+    scroll({top: 0})
   }
   return (
     <div className="cocktail-info-container">
