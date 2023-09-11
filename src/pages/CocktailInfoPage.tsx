@@ -1,30 +1,35 @@
 import { useNavigate, useLoaderData, useNavigation } from "react-router-dom";
 import { Cocktail } from "../types";
+import RelatedDrinks from "../Components/RelatedDrinks";
+
 
 export default function CocktailInfoPage() {
   const {
-    strAlcoholic,
-    strCategory,
-    strDrink,
-    strDrinkThumb,
-    strGlass,
-    strIngredient1,
-    strIngredient10,
-    strIngredient11,
-    strIngredient12,
-    strIngredient13,
-    strIngredient14,
-    strIngredient15,
-    strIngredient2,
-    strIngredient3,
-    strIngredient4,
-    strIngredient5,
-    strIngredient6,
-    strIngredient7,
-    strIngredient8,
-    strIngredient9,
-    strInstructions,
-  } = useLoaderData() as Cocktail;
+    cocktail: {
+      strAlcoholic,
+      strCategory,
+      strDrink,
+      strDrinkThumb,
+      strGlass,
+      strIngredient1,
+      strIngredient10,
+      strIngredient11,
+      strIngredient12,
+      strIngredient13,
+      strIngredient14,
+      strIngredient15,
+      strIngredient2,
+      strIngredient3,
+      strIngredient4,
+      strIngredient5,
+      strIngredient6,
+      strIngredient7,
+      strIngredient8,
+      strIngredient9,
+      strInstructions,
+    },
+    relatedDrinks,
+  } = useLoaderData() as { cocktail: Cocktail; relatedDrinks: Cocktail[] };
 
   const navigation = useNavigation();
 
@@ -47,6 +52,9 @@ export default function CocktailInfoPage() {
   ].filter((i) => i != null);
 
   const navigate = useNavigate();
+  if (navigation.state == 'idle') {
+    scroll({behavior: 'instant', top: 0})
+  }
   return (
     <div className="cocktail-info-container">
       {navigation.state == "loading" ? (
@@ -57,7 +65,10 @@ export default function CocktailInfoPage() {
         />
       ) : (
         <div className="cocktail-info">
-          <button className="back-to-home-btn" onClick={() => navigate(-1)}>
+          <button className="back-to-home-btn" onClick={() => {
+            navigate(-1)
+            
+          }}>
             Go back
           </button>
 
@@ -97,6 +108,8 @@ export default function CocktailInfoPage() {
           </div>
         </div>
       )}
+      <h1>Related Drinks</h1>
+      <RelatedDrinks relatedDrinks={relatedDrinks} />
     </div>
   );
 }

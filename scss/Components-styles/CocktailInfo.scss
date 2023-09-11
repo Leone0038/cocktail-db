@@ -1,5 +1,8 @@
 .cocktail-info-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   .cocktail-loading {
     position: fixed;
     z-index: 1;
@@ -50,6 +53,26 @@
         align-items: start;
         flex-direction: column;
         gap: 2rem;
+      }
+    }
+  }
+
+  .related-drinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 1rem;
+    .related-drink {
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: -2px 2px 5px grey;
+      cursor: pointer;
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
       }
     }
   }

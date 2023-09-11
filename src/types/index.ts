@@ -1,5 +1,9 @@
 import { store } from "../app/store";
 
+export type RelatedDrinksProps = {
+  relatedDrinks: Cocktail[]
+}
+
 export type StoreState = ReturnType<typeof store.getState>;
 
 export type CocktailsContainerProps = {
