@@ -3,7 +3,7 @@ import { GlassesProps } from "../types";
 export default function Glasses({ glasses, status }: GlassesProps) {
   return (
     <div className="filter-option-group">
-      <p>Category</p>
+      <p>Glasses</p>
       <div className="options-container">
         {status == "error" ? (
           <h1>An Error Ocurred</h1>

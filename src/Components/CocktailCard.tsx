@@ -15,7 +15,7 @@ export default function CocktailCard({
       className="cocktail-card"
       onClick={() => navigate(`/cocktails/${idDrink}`)}
     >
-      <img src={strDrinkThumb} alt={strDrink} width={"100%"} height={"auto"} />
+      <img src={strDrinkThumb} alt={strDrink} width={"100%"} height={"auto"} loading="eager"/>
       <div className="cocktail-info-container">
         <h1>{strDrink}</h1>
         <h5>{strGlass}</h5>

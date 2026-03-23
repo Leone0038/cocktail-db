@@ -3,7 +3,7 @@ import { IngredientsProps } from "../types";
 export default function Ingredients({ ingredients, status }: IngredientsProps) {
   return (
     <div className="filter-option-group">
-      <p>Category</p>
+      <p>Ingredients</p>
       <div className="options-container">
         {status == "error" ? (
           <h1>An Error Ocurred</h1>

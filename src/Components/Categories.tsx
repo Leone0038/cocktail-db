@@ -3,7 +3,7 @@ import { CategoriesProps } from "../types";
 export default function Categories({ categories, status }: CategoriesProps) {
   return (
     <div className="filter-option-group">
-      <p>Category</p>
+      <p>Miscellaneous</p>
       <div className="options-container">
         {status == "error" ? (
           <h1>An Error Ocurred</h1>
