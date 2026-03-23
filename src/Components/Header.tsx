@@ -10,7 +10,7 @@ export default function Header() {
         DB
       </h2>
       <div className="links-container">
-        <a onClick={() => navigate(-1)} style={{cursor: 'pointer'}}>Home</a>
+        <a onClick={() => navigate('/')} style={{cursor: 'pointer'}}>Home</a>
         <NavLink to="/about">About</NavLink>
       </div>
     </div>
