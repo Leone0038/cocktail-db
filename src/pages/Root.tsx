@@ -2,7 +2,7 @@ import "../css/styles.css";
 import Header from "../Components/Header";
 import SearchBar from "../Components/SearchBar";
 import CocktailsContainer from "../Components/CocktailsContainer";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { AppContextProps, Cocktail } from "../types";
 
@@ -10,7 +10,6 @@ export const AppContext = createContext({} as AppContextProps);
 
 export default function Root() {
     const cocktailsList = useLoaderData() as Cocktail[];
-    const [cocktails, setCocktails] = useState(cocktailsList)
     const [searchResults, setSearchResults] = useState<Cocktail[]>([]);
     const [isLoadingSearch, setIsLoadingSearch] = useState(false);
 
