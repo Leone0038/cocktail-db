@@ -71,22 +71,17 @@ export default function Root() {
                             <h1 style={{ alignSelf: "center" }}>
                                 No Search Matches
                             </h1>
-                        ) : searchResults.length < 1 ? (
-                            <>
-                                <h1 style={{ textAlign: "center" }}>
-                                    Cocktails
-                                </h1>
-                                <CocktailsContainer
-                                    cocktailsList={cocktailsList}
-                                />
-                            </>
                         ) : (
                             <>
                                 <h1 style={{ textAlign: "center" }}>
                                     Cocktails
                                 </h1>
                                 <CocktailsContainer
-                                    cocktailsList={searchResults}
+                                    cocktailsList={
+                                        searchResults.length > 1
+                                            ? searchResults
+                                            : cocktailsList
+                                    }
                                 />
                             </>
                         )}{" "}

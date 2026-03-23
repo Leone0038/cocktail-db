@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext } from "react";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { AppContext } from "../../pages/Root";
 
 import {
@@ -26,7 +26,7 @@ export default function FilterInterface({
     const alcoholic = useSelector(selectAllAlcoholic);
     const glasses = useSelector(selectAllGlasses);
     const ingredients = useSelector(selectAllIngredients);
-
+    const navigate = useNavigate();
     const { changeUrl } = useContext(AppContext);
 
     const filteredCategories = categories.filter(
@@ -49,9 +49,18 @@ export default function FilterInterface({
             <Alcoholic alcoholic={filteredAlcoholic} status={status} />
             <Glasses glasses={filteredGlasses} status={status} />
             <Ingredients ingredients={filteredIngredients} status={status} />
-            <button className="filter-submit-btn" type="submit">
-                Filter
-            </button>
+            <section className="filter-and-clear-btn-container">
+                <button className="filter-submit-btn" type="submit">
+                    Filter
+                </button>
+                <button
+                    className="filter-submit-btn clear-btn"
+                    type="button"
+                    onClick={() => navigate("/")}
+                >
+                    Clear
+                </button>
+            </section>
         </Form>
     );
 }

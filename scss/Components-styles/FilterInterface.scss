@@ -14,6 +14,31 @@
     height: 60vh;
     overflow-y: scroll;
 
+    .filter-and-clear-btn-container {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        bottom: 0;
+        .filter-submit-btn {
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+            &:hover {
+                background-color: rgb(0, 45, 0);
+            }
+
+            width: 120px;
+            height: 50px;
+            padding: 0.5rem 1rem;
+            font: inherit;
+            background-color: var(--MAIN-FONT-COLOR);
+            color: aliceblue;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    }
+
     .close-btn {
         align-self: self-end;
         position: sticky;
@@ -51,24 +76,5 @@
                 }
             }
         }
-    }
-    .filter-submit-btn {
-        transition-duration: 500ms;
-        transition-timing-function: ease-in-out;
-        &:hover {
-            background-color: rgb(0, 45, 0);
-        }
-        position: sticky;
-        bottom: 0;
-        width: 120px;
-        height: 50px;
-        padding: 0.5rem 1rem;
-        font: inherit;
-        background-color: var(--MAIN-FONT-COLOR);
-        color: aliceblue;
-        border: none;
-        outline: none;
-        border-radius: 15px;
-        cursor: pointer;
     }
 }

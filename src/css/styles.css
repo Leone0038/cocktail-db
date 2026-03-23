@@ -355,6 +355,31 @@ body .app .app-loading {
   height: 60vh;
   overflow-y: scroll;
 }
+.filter-interface .filter-and-clear-btn-container {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  bottom: 0;
+}
+.filter-interface .filter-and-clear-btn-container .filter-submit-btn {
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.filter-interface .filter-and-clear-btn-container .filter-submit-btn:hover {
+  background-color: rgb(0, 45, 0);
+}
+.filter-interface .filter-and-clear-btn-container .filter-submit-btn {
+  width: 120px;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  background-color: var(--MAIN-FONT-COLOR);
+  color: aliceblue;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
 .filter-interface .close-btn {
   align-self: self-end;
   position: sticky;
@@ -387,27 +412,6 @@ body .app .app-loading {
 }
 .filter-interface .filter-option-group .options-container .label-input-container input,
 .filter-interface .filter-option-group .options-container .label-input-container label {
-  cursor: pointer;
-}
-.filter-interface .filter-submit-btn {
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
-}
-.filter-interface .filter-submit-btn:hover {
-  background-color: rgb(0, 45, 0);
-}
-.filter-interface .filter-submit-btn {
-  position: sticky;
-  bottom: 0;
-  width: 120px;
-  height: 50px;
-  padding: 0.5rem 1rem;
-  font: inherit;
-  background-color: var(--MAIN-FONT-COLOR);
-  color: aliceblue;
-  border: none;
-  outline: none;
-  border-radius: 15px;
   cursor: pointer;
 }
 
