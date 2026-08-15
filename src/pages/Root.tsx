@@ -78,7 +78,7 @@ export default function Root() {
                                 </h1>
                                 <CocktailsContainer
                                     cocktailsList={
-                                        searchResults.length > 1
+                                        searchResults.length > 0
                                             ? searchResults
                                             : cocktailsList
                                     }
