@@ -8,28 +8,28 @@
 
 ## 💻 Sobre o Projeto
 
-O projeto foi construído para colocar em prática conceitos avançados de desenvolvimento front-end com React e TypeScript[cite: 1]. A aplicação permite aos usuários pesquisar drinks em tempo real, explorar categorias e visualizar ingredientes e modos de preparo de forma rápida e intuitiva[cite: 1].
+O projeto foi construído para colocar em prática conceitos avançados de desenvolvimento front-end com React e TypeScript. A aplicação permite aos usuários pesquisar drinks em tempo real, explorar categorias e visualizar ingredientes e modos de preparo de forma rápida e intuitiva.
 
-O foco principal foi garantir uma boa arquitetura de componentes, consumo eficiente de API e estilização moderna e responsiva usando SASS[cite: 1].
+O foco principal foi garantir uma boa arquitetura de componentes, consumo eficiente de API e estilização moderna e responsiva usando SASS.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Library Principal:** React[cite: 1]
-- **Linguagem:** TypeScript[cite: 1]
-- **Estilização:** SASS / SCSS[cite: 1]
-- **API:** Consumo de API REST de coquetéis (TheCocktailDB)[cite: 1]
-- **Hospedagem & Deploy:** Netlify[cite: 1]
+- **Library Principal:** React
+- **Linguagem:** TypeScript
+- **Estilização:** SASS / SCSS
+- **API:** Consumo de API REST de coquetéis (TheCocktailDB)
+- **Hospedagem & Deploy:** Netlify
 
 ---
 
 ## ✨ Principais Funcionalidades
 
-- **Busca em Tempo Real:** Filtro instantâneo por nome de drinks através da barra de pesquisa[cite: 1].
-- **Consumo de API REST:** Integração dinâmica para listagem de receitas e detalhes[cite: 1].
-- **Interface Responsiva:** Design adaptado para telas de dispositivos móveis e desktop[cite: 1].
-- **Tipagem Estática:** Estruturação de dados rigorosa com TypeScript para evitar erros em tempo de execução[cite: 1].
+- **Busca em Tempo Real:** Filtro instantâneo por nome de drinks através da barra de pesquisa.
+- **Consumo de API REST:** Integração dinâmica para listagem de receitas e detalhes.
+- **Interface Responsiva:** Design adaptado para telas de dispositivos móveis e desktop.
+- **Tipagem Estática:** Estruturação de dados rigorosa com TypeScript para evitar erros em tempo de execução.
 
 ---
 
